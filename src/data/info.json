@@ -1,0 +1,210 @@
+{
+  "131": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/alice-in-wonderland/",
+    "land": "\n            Fantasyland\n        ",
+    "height": "Any Height",
+    "age": "PreschoolersKidsTweensTeens",
+    "type": "Slow RidesDarkLoud",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/dlr/parks-and-tickets/attractions/disneyland/alice-in-wonderland/alice-in-wonderland-00.jpg?1638917716456"
+  },
+  "132": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/autopia/",
+    "land": "\n            Tomorrowland\n        ",
+    "height": "32\" (81 cm) or Taller",
+    "age": "KidsTweensAdults",
+    "type": "Slow RidesLoud",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/dlr/parks-and-tickets/attractions/disneyland/autopia/autopia-09.jpg?1641428836935"
+  },
+  "133": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/buzz-lightyear-astro-blasters/",
+    "land": "\n            Tomorrowland\n        ",
+    "height": "Any Height",
+    "age": "All Ages",
+    "type": "Slow RidesSpinningDarkLoud",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/dlr/parks-and-tickets/attractions/disneyland/buzz-lightyear-astro-blaster/buzz-lightyear-astro-blasters-00.jpg?1641428935551"
+  },
+  "134": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/casey-jr-circus-train/",
+    "land": "\n            Fantasyland\n        ",
+    "height": "Any Height",
+    "age": "PreschoolersKids",
+    "type": "Slow Rides",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/dlr/parks-and-tickets/attractions/disneyland/casey-jr-circus-train/casey-jr-circus-train-00.jpg?1638918128721"
+  },
+  "144": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/indiana-jones-adventure/",
+    "land": "\n            Adventureland\n        ",
+    "height": "46\" (117 cm) or Taller",
+    "age": "KidsTweensTeensAdults",
+    "type": "Small DropsThrill RidesDarkLoudScary",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/dlr/parks-and-tickets/attractions/disneyland/indiana-jones-adventure/indiana-jones-adventure-00.jpg?1641428901093"
+  },
+  "146": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/king-arthur-carrousel/",
+    "land": "\n            Fantasyland\n        ",
+    "height": "Any Height",
+    "age": "PreschoolersKidsTweens",
+    "type": "Slow RidesSpinningLoud",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/dlr/parks-and-tickets/attractions/disneyland/king-arthur-carrousel/king-arthur-carrousel-00.jpg?1638921747878"
+  },
+  "149": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/matterhorn-bobsleds/",
+    "land": "\n            Fantasyland\n        ",
+    "height": "42\" (107 cm) or Taller",
+    "age": "KidsTweensTeensAdults",
+    "type": "Small DropsThrill RidesWater RidesDarkLoudScary",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/dlr/parks-and-tickets/attractions/disneyland/matterhorn-bobsleds/matterhorn-bobsleds-00.jpg?1641428969431"
+  },
+  "153": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/mr-toads-wild-ride/",
+    "land": "\n            Fantasyland\n        ",
+    "height": "Any Height",
+    "age": "KidsTweensAdults",
+    "type": "Slow RidesDarkLoudScary",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/dlr/parks-and-tickets/attractions/disneyland/mr-toads-wild-ride/mr-toads-wild-ride-00.jpg?1638923380890"
+  },
+  "154": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/pinocchios-daring-journey/",
+    "land": "\n            Fantasyland\n        ",
+    "height": "Any Height",
+    "age": "PreschoolersKidsTweens",
+    "type": "Slow RidesDarkLoudScary",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/dlr/parks-and-tickets/attractions/disneyland/pinocchios-daring-journey/pinocchios-daring-journey-03.jpg?1638923708212"
+  },
+  "163": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/storybook-land-canal-boats/",
+    "land": "\n            Fantasyland\n        ",
+    "height": "Any Height",
+    "age": "PreschoolersKidsTweens",
+    "type": "Slow RidesWater Rides",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/dlr/parks-and-tickets/attractions/disneyland/storybook-land-canal-boats/storybook-land-canal-boats-00.jpg?1638924639938"
+  },
+  "508": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/big-thunder-mountain-railroad/",
+    "land": "\n            Frontierland\n        ",
+    "height": "40\" (102 cm) or Taller",
+    "age": "KidsTweensTeensAdults",
+    "type": "Small DropsThrill RidesDarkLoud",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/dlr/parks-and-tickets/attractions/disneyland/big-thunder-mountain-railroad/big-thunder-mountain-railroad-00.jpg?1641428886832"
+  },
+  "509": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/dumbo-the-flying-elephant/",
+    "land": "\n            Fantasyland\n        ",
+    "height": "Any Height",
+    "age": "PreschoolersKids",
+    "type": "Slow RidesSpinning",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/disneyland/attractions/disneyland/dumbo-the-flying-elephant/dumbo-mom-kids-16x9.jpg?1638920519984"
+  },
+  "510": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/haunted-mansion/",
+    "land": "\n            New Orleans Square\n        ",
+    "height": "Any Height",
+    "age": "KidsTweensTeensAdults",
+    "type": "Slow RidesDarkLoudScary",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/disneyland/attractions/haunted-mansion/hanted-mansion-exterior-16x9.jpg?1642795039488"
+  },
+  "511": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/its-a-small-world/",
+    "land": "\n            Fantasyland\n        ",
+    "height": "Any Height",
+    "age": "All Ages",
+    "type": "Slow RidesWater RidesLoud",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/disneyland/attractions/disneyland/its-a-small-world/small-world-exterior-16x9.jpg?1649091441876"
+  },
+  "512": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/jungle-cruise/",
+    "land": "\n            Adventureland\n        ",
+    "height": "Any Height",
+    "age": "All Ages",
+    "type": "Slow RidesWater RidesLoud",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/dlr/parks-and-tickets/attractions/disneyland/jungle-cruise/jungle-cruise-00.jpg?1638921648678"
+  },
+  "513": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/mad-tea-party/",
+    "land": "\n            Fantasyland\n        ",
+    "height": "Any Height",
+    "age": "All Ages",
+    "type": "Spinning",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/disneyland/attractions/disneyland/mad-tea-party/tea-cup-ride-father-daughters-16x9.jpg?1638922618946"
+  },
+  "514": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/peter-pans-flight/",
+    "land": "\n            Fantasyland\n        ",
+    "height": "Any Height",
+    "age": "PreschoolersKidsTweens",
+    "type": "Small DropsSlow RidesDarkLoud",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/dlr/parks-and-tickets/attractions/disneyland/peter-pans-flight/peter-pan-flight-00.jpg?1638923467963"
+  },
+  "517": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/space-mountain/",
+    "land": "\n            Tomorrowland\n        ",
+    "height": "40\" (102 cm) or Taller",
+    "age": "KidsTweensTeensAdults",
+    "type": "Small DropsThrill RidesDarkLoudScary",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/dlr/parks-and-tickets/attractions/disneyland/space-mountain/space-mountain-00.jpg?1648486353825"
+  },
+  "518": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/splash-mountain/",
+    "land": "\n            Critter Country\n        ",
+    "height": "40\" (102 cm) or Taller",
+    "age": "KidsTweensTeensAdults",
+    "type": "Thrill RidesWater RidesDarkLoud",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/dlr/parks-and-tickets/attractions/disneyland/splash-mountain/splash-mountain-00.jpg?1646751362545"
+  },
+  "519": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/star-tours/",
+    "land": "\n            Tomorrowland\n        ",
+    "height": "40\" (102 cm) or Taller",
+    "age": "KidsTweensTeensAdults",
+    "type": "Small DropsThrill RidesDarkLoud",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/dlr/parks-and-tickets/attractions/disneyland/star-tours/star-tours-06.jpg?1641429168341"
+  },
+  "520": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/many-adventures-of-winnie-the-pooh/",
+    "land": "\n            Critter Country\n        ",
+    "height": "Any Height",
+    "age": "PreschoolersKidsTweens",
+    "type": "Slow RidesDarkLoud",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/dlr/parks-and-tickets/attractions/disneyland/many-adventures-of-winnie-the-pooh/many-adventures-of-winnie-the-pooh-00.jpg?1640818282331"
+  },
+  "565": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/davy-crocketts-explorer-canoes/",
+    "land": "\n            Critter Country\n        ",
+    "height": "Any Height",
+    "age": "KidsTweensTeensAdults",
+    "type": "Water Rides",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/dlr/parks-and-tickets/attractions/disneyland/davy-crocketts-explorer-canoes/davy-crocketts-explorer-canoes-00.jpg?1641864633873"
+  },
+  "940": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/astro-orbitor/",
+    "land": "\n            Tomorrowland\n        ",
+    "height": "Any Height",
+    "age": "PreschoolersKidsTweensTeens",
+    "type": "Spinning",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/dlr/parks-and-tickets/attractions/disneyland/astro-orbitor/astro-orbitor-00.jpg?1638917752286"
+  },
+  "1097": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/millennium-falcon-smugglers-run/",
+    "land": "\n            Star Wars: Galaxy's Edge\n        ",
+    "height": "38” (97 cm) or Taller",
+    "age": "KidsTweensTeensAdults",
+    "type": "Small DropsThrill RidesDarkLoud",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/disneyland/attractions/disneyland/millennium-falcon-smugglers-run/smugglers-run-interior-16x9.jpg?1641429007499"
+  },
+  "1580": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/star-wars-rise-of-the-resistance/",
+    "land": "\n            Star Wars: Galaxy's Edge\n        ",
+    "height": "40\" (102 cm) or Taller",
+    "age": "KidsTweensTeensAdults",
+    "type": "Small DropsThrill RidesDarkLoudScary",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/disneyland/attractions/disneyland/star-wars-rise-of-the-resistance/rise-of-the-resisstance-interior-16x9.jpg?1649372421405"
+  },
+  "2006": {
+    "url": "https://disneyland.disney.go.com/attractions/disneyland/snow-whites-enchanted-wish/",
+    "land": "\n            Fantasyland\n        ",
+    "height": "Any Height",
+    "age": "KidsTweensAdults",
+    "type": "Slow RidesDarkLoud",
+    "img": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/disneyland/attractions/disneyland/snow-whites-enchanted-wish/snow-whites-echanted-wish-dopey-16x9.jpg?1643315098168"
+  }
+}
