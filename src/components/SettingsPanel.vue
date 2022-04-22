@@ -70,11 +70,13 @@
       <v-switch :value="pessimistic" :label="pessimistic ? 'worst case' : 'average' "
         @click="changePessi"/>
     </v-col>
+    <v-btn @click="testAuto">test</v-btn>
   </v-row>
 </template>
 
 <script>
-import { defaultSettings } from '../data/optimizer';
+import { mapState } from 'vuex';
+// import { defaultSettings } from '../data/optimizer';
 import { findTypeRides } from '../data/ridesDb';
 
 const hr2text = (n) => {
@@ -91,7 +93,6 @@ export default {
   name: 'SettingsPanel',
   props: ['changeSettings'],
   data: () => ({
-    ...defaultSettings,
     speedOptions: [
       { text: 'sightseeing', value: 4000 },
       { text: 'slow', value: 4800 },
@@ -110,6 +111,11 @@ export default {
     typeSelected: [0, 1, 2, 3, 4, 5, 6, 7],
   }),
   computed: {
+    ...mapState(
+      'settings',
+      ['speed', 'startTime', 'endTime', 'startPoint', 'dayOfWeek', 'breaks',
+        'scoreEm', 'disEm', 'timeEm', 'pessimistic'],
+    ),
     breakOptions() {
       const { startTime, endTime, breaks } = this;
       const options = [];
@@ -150,52 +156,45 @@ export default {
   },
   methods: {
     changeSpeed(val) {
-      this.changeSettings({ speed: val });
-      this.speed = val;
+      this.$store.commit('settings/set', { speed: val });
     },
     changeStartTime(val) {
-      this.changeSettings({ startTime: val });
-      this.startTime = val;
+      this.$store.commit('settings/set', { startTime: val });
     },
     changeEndTime(val) {
-      this.changeSettings({ endTime: val });
-      this.endTime = val;
+      this.$store.commit('settings/set', { endTime: val });
     },
     changeDay(val) {
-      this.changeSettings({ dayOfWeek: val });
-      this.dayOfWeek = val;
+      this.$store.commit('settings/set', { dayOfWeek: val });
     },
     addBreak() {
       if (this.breakSlotSelected) {
         const { breaks, breakSlotSelected } = this;
         const newBreaks = [...breaks, breakSlotSelected];
         newBreaks.sort((a, b) => a - b);
-        this.changeSettings({ breaks: newBreaks });
-        this.breaks = newBreaks;
+        this.$store.commit('settings/set', { breaks: newBreaks });
       }
     },
     removeBreak(val) {
       const { breaks } = this;
       const newBreaks = breaks.filter((b) => b !== val);
-      this.changeSettings({ breaks: newBreaks });
-      this.breaks = newBreaks;
+      this.$store.commit('settings/set', { breaks: newBreaks });
     },
     changeScoreEm(val) {
-      this.changeSettings({ scoreEm: val });
-      this.scoreEm = val;
+      this.$store.commit('settings/set', { scoreEm: val });
     },
     changeDisEm(val) {
-      this.changeSettings({ disEm: 2 - val });
-      this.disEm = val;
+      this.$store.commit('settings/set', { disEm: 2 - val });
     },
     changeTimeEm(val) {
-      this.changeSettings({ timeEm: val });
-      this.timeEm = val;
+      this.$store.commit('settings/set', { timeEm: val });
     },
     changePessi() {
       const { pessimistic } = this;
-      this.changeSettings({ pessimistic: !pessimistic });
-      this.pessimistic = !pessimistic;
+      this.$store.commit('settings/set', { pessimistic: !pessimistic });
+    },
+    testAuto() {
+      this.$store.dispatch('wizard/search');
     },
   },
 };

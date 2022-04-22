@@ -44,10 +44,15 @@
       </v-timeline>
     </v-col>
   </v-row>
+  <v-overlay :value="loading">
+    {{ loadingMsg }}
+    <v-progress-circular indeterminate />
+  </v-overlay>
 </v-container>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import rides from '../data/rides';
 // import waitTimes from '../data/waitTimes';
 import Optimizer from '../data/optimizer';
@@ -86,12 +91,11 @@ export default {
   components: { SettingsPanel, RideCard },
   data: () => ({
     rideOptions: rides.map(({ name, id }) => ({ text: name, value: id })),
-    path: null,
-    details: null,
     changeSettings: opt.changeSettings,
     allExpand: false,
   }),
   computed: {
+    ...mapState(['path', 'details', 'loading', 'loadingMsg']),
     timeLine() {
       if (!this.path) return null;
       const timeLine = [];
@@ -171,9 +175,7 @@ export default {
   },
   methods: {
     findRoute() {
-      const route = opt.findRoute();
-      this.path = route.pathed.slice(1);
-      this.details = route.details;
+      this.$store.commit('find');
     },
     saveRoute() {
       if (this.path) {
@@ -190,13 +192,7 @@ export default {
       }
     },
     loadRoute() {
-      if (localStorage && localStorage.getItem('savedRoute')) {
-        const saved = JSON.parse(localStorage.getItem('savedRoute'));
-        if (saved.path && saved.details) {
-          this.path = saved.path;
-          this.details = saved.details;
-        }
-      }
+      this.$store.commit('load');
     },
   },
 };

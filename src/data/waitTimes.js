@@ -127,7 +127,6 @@ const findBreaks = (day, target, minHr, maxHr) => {
   let longs = target > 3 ? target - Math.round(target / 2 + 1) : 0;
   let shorts = target - (longs * 2);
   const breaks = [];
-  console.log('looking for breaks', longs, shorts);
   for (let space = 3; space > 1 && longs > 0; space -= 0.5) {
     let finds = findLong(weekdays[day], breaks, space, minHr, maxHr);
     while (finds) {
