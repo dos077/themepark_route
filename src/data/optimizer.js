@@ -8,15 +8,15 @@ const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frida
 
 const defaultSettings = () => ({
   speed: 4800,
-  startTime: 8,
-  endTime: 22,
+  startTime: 9,
+  endTime: 21,
   startPoint: null,
   dayOfWeek: 0,
   breaks: [11, 14, 14.5, 18],
   buffer: 0.17,
   noRides: [],
   maxDisHr: 2000,
-  batchLimit: 8000,
+  batchLimit: 2000,
   batchDepth: 4,
   scoreEm: 1,
   disEm: 1,
@@ -124,7 +124,7 @@ const optimizer = () => {
         });
         while (newBranches.length > batchLimit) {
           const cutIndex = Math.floor(Math.random() * (newBranches.length));
-          newBranches.splice(cutIndex, 1);
+          newBranches.splice(cutIndex, 16);
         }
       });
       if (!newBranches || newBranches.length === 0) break;
@@ -193,6 +193,7 @@ const optimizer = () => {
     timeEm,
     noRides,
     pessimistic,
+    batchLimit,
   }) => {
     if (speed !== undefined) settings.speed = speed;
     if (startTime !== undefined) settings.startTime = startTime;
@@ -206,7 +207,8 @@ const optimizer = () => {
     if (timeEm !== undefined) settings.timeEm = timeEm;
     if (noRides !== undefined) settings.noRides = noRides;
     if (pessimistic !== undefined) settings.pessimistic = pessimistic;
-    console.log('setting change', settings);
+    if (batchLimit !== undefined) settings.batchLimit = batchLimit;
+    // console.log('setting change', settings);
   };
 
   const findRoute = () => batchSearch({

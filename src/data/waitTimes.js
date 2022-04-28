@@ -62,6 +62,8 @@ rides.forEach(({ id }) => {
   exportDb[id] = analyzeWaits(waitDb[id]);
 });
 
+exportDb.updated = new Date(waitDb[rides[0].id].updated);
+
 const stats = {};
 
 weekdays.forEach((day) => {
@@ -71,8 +73,12 @@ weekdays.forEach((day) => {
     hrs.forEach((hr) => {
       if (!stats[day][hr]) stats[day][hr] = { total: 0, n: 0 };
       if (exportDb[id][hr] && exportDb[id][hr][day]) {
-        stats[day][hr].total += exportDb[id][hr][day].avg;
-        stats[day][hr].n += exportDb[id][hr][day].n;
+        const dp = stats[day][hr];
+        dp.total += exportDb[id][hr][day].avg;
+        dp.n += exportDb[id][hr][day].n;
+        if (!dp.max || dp.max < exportDb[id][hr][day].max) {
+          dp.max = exportDb[id][hr][day].max;
+        }
       }
     });
   });
@@ -100,7 +106,7 @@ const findShort = (day, breaks, space, minHr, maxHr) => {
   return false;
 };
 
-const findLong = (day, breaks, space, minHr, maxHr) => {
+const findLong = (day, breaks, space, minHr, maxHr, isWorst) => {
   let best = false;
   let bestScore = null;
   const filtered = hrRank[day].filter(({ hr }) => breaks
@@ -113,7 +119,7 @@ const findLong = (day, breaks, space, minHr, maxHr) => {
     const adj = filtered.slice(0, i).filter((b) => Math.abs(a.hr - b.hr) < 1);
     if (adj && adj.length > 0) {
       const b = adj[adj.length - 1];
-      const score = a.avg + b.avg;
+      const score = isWorst ? a.max + b.max : a.avg + b.avg;
       if (score > bestScore) {
         best = [a.hr, b.hr];
         bestScore = score;
@@ -123,7 +129,7 @@ const findLong = (day, breaks, space, minHr, maxHr) => {
   return best;
 };
 
-const findBreaks = (day, target, minHr, maxHr) => {
+const findBreaks = (day, target, minHr, maxHr, isWorst) => {
   let longs = target > 3 ? target - Math.round(target / 2 + 1) : 0;
   let shorts = target - (longs * 2);
   const breaks = [];
@@ -133,11 +139,11 @@ const findBreaks = (day, target, minHr, maxHr) => {
       breaks.push(...finds);
       longs -= 1;
       if (longs === 0) break;
-      finds = findLong(weekdays[day], breaks, space, minHr, maxHr);
+      finds = findLong(weekdays[day], breaks, space, minHr, maxHr, isWorst);
     }
   }
   for (let space = 3; space > 1 && shorts > 0; space -= 0.5) {
-    let finds = findShort(weekdays[day], breaks, space, minHr, maxHr);
+    let finds = findShort(weekdays[day], breaks, space, minHr, maxHr, isWorst);
     while (finds && shorts > 0) {
       breaks.push(finds);
       shorts -= 1;
@@ -145,10 +151,11 @@ const findBreaks = (day, target, minHr, maxHr) => {
       finds = findShort(weekdays[day], breaks, space, minHr, maxHr);
     }
   }
+  breaks.sort((a, b) => a - b);
   return breaks;
 };
 
-// console.log(findBreaks(1, 4, 8, 22));
+// console.log(findBreaks(5, 4, 9, 21));
 
 export default exportDb;
 export { findBreaks };

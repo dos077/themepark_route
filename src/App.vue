@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 
 export default {
   name: 'App',
@@ -14,5 +15,8 @@ export default {
   data: () => ({
     //
   }),
+  computed: {
+    ...mapState(['settingOn', 'path']),
+  },
 };
 </script>

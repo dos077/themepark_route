@@ -38,26 +38,30 @@ const wizard = {
   }),
   mutations: {
     setDays(state, val) {
-      state.days = val;
+      state.days = [...val];
     },
     setBreaksTarget(state, val) {
       state.breaksTarget = val;
+    },
+    setThreads(state, val) {
+      console.log('setting threads', val);
+      state.threads = val;
     },
   },
   actions: {
     async search({ state, commit, rootState }) {
       let best = null;
       const { days, breaksTarget, threads } = state;
-      const { startTime, endTime } = rootState.settings;
+      const { startTime, endTime, pessimistic } = rootState.settings;
       commit('setLoading', true, { root: true });
       wait(250);
       for (let d = 0; d < days.length; d += 1) {
         const day = days[d];
-        commit('setLoadingMsg', `Routing ${weekdays[day]}`, { root: true });
+        commit('setLoadingMsg', `Searching ${weekdays[day]} Routes`, { root: true });
         wait(250);
         commit('settings/set', { dayOfWeek: day }, { root: true });
         if (breaksTarget) {
-          const breaks = findBreaks(day, breaksTarget, startTime, endTime);
+          const breaks = findBreaks(day, breaksTarget, startTime, endTime, pessimistic);
           commit('settings/set', { breaks }, { root: true });
         }
         const workers = [];
@@ -67,7 +71,7 @@ const wizard = {
             new Worker(new URL('../data/optThread.js', import.meta.url)),
           );
         }
-        for (let i = 0; i < 10; i += threads) {
+        for (let i = 0; i < threads; i += threads) {
           for (let j = 0; j < threads; j += 1) {
             const worker = workers[j];
             worker.onmessage = ((ev) => {
@@ -77,8 +81,8 @@ const wizard = {
             worker.onerror = (err) => console.log(err);
             worker.postMessage(opti.showSettings());
           }
-          while (threadsDone.length < i + threads) {
-            await wait(1000); //eslint-disable-line
+          while (threadsDone.length < threads) {
+            await wait(2000); //eslint-disable-line
           }
         }
         for (let r = 0; r < threadsDone.length; r += 1) {
@@ -87,7 +91,6 @@ const wizard = {
         }
         workers.forEach((worker) => worker.terminate());
       }
-      console.log(best);
       if (best) {
         commit('setRoute', best, { root: true });
         commit('settings/set', { dayOfWeek: best.day }, { root: true });
@@ -103,6 +106,8 @@ export default new Vuex.Store({
     details: null,
     loading: false,
     loadingMsg: '',
+    settingOn: true,
+    allExpand: false,
   },
   getters: {
   },
@@ -130,6 +135,12 @@ export default new Vuex.Store({
     },
     setLoadingMsg(state, val) {
       state.loadingMsg = val;
+    },
+    toggleSetting(state) {
+      state.settingOn = !state.settingOn;
+    },
+    toggleExpand(state) {
+      state.allExpand = !state.allExpand;
     },
   },
   actions: {

@@ -33,6 +33,6 @@ const rides = [
   // { name: '', ride: '', id:  },
 ];
 
-// export default rides;
+export default rides;
 
-module.exports = rides;
+// module.exports = rides;

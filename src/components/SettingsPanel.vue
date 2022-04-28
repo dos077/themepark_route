@@ -53,7 +53,7 @@
         </template>
       </v-slider>
       <v-slider :min="0" :max="2" :step="0.5" ticks="always" label="walk"
-        :value="disEm" @change="changeDisEm">
+        :value="2 - disEm" @change="changeDisEm">
         <template v-slot:append>
           <v-icon color="blue">mdi-run-fast</v-icon>
         </template>
@@ -91,7 +91,6 @@ const hr2text = (n) => {
 
 export default {
   name: 'SettingsPanel',
-  props: ['changeSettings'],
   data: () => ({
     speedOptions: [
       { text: 'sightseeing', value: 4000 },
@@ -148,9 +147,9 @@ export default {
           noRides.push(...findTypeRides(type));
         });
         console.log(noRides);
-        this.changeSettings({ noRides });
+        this.$store.commit('settings/set', { noRides });
       } else {
-        this.changeSettings({ noRides: [] });
+        this.$store.commit('settings/set', { noRides: [] });
       }
     },
   },

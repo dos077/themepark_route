@@ -6,30 +6,30 @@
       {{ name }}
     </v-card-title>
     <v-card-text>
-      <p>
+      <v-chip-group>
         <v-chip v-if="distance.length > 0"
-          :color="disColor" class="mr-3">
+          :color="disColor">
           {{ distance }}
         </v-chip>
-        <v-chip :color="waitColor" class="mr-3">
+        <v-chip :color="waitColor">
           {{ Math.round(item.wait * 60) }} min wait
         </v-chip>
         <v-chip v-if="score" outlined>
           {{ score }}/5
         </v-chip>
-      </p>
-      <p v-if="ages">
+      </v-chip-group>
+      <v-chip-group v-if="ages">
         <v-chip v-for="age in ages" :key="age"
-          color="blue-grey darken-1" outlined class="mr-3">
+          color="blue-grey darken-1" outlined>
           {{ age }}
         </v-chip>
-      </p>
-      <p v-if="types">
+      </v-chip-group>
+      <v-chip-group v-if="types">
         <v-chip v-for="type in types" :key="type.text"
-          :color="type.color + ' darken-3'" outlined dark class="mr-3">
+          :color="type.color + ' darken-3'" outlined dark>
           {{ type.text }}
         </v-chip>
-      </p>
+      </v-chip-group>
     </v-card-text>
     <v-card-actions>
       <v-btn v-if="!allExpand" plain @click="expand = false">
@@ -38,7 +38,7 @@
       </v-btn>
       <v-btn v-if="url" plain :href="url" color="blue" target="new">
         <v-icon>mdi-link</v-icon>
-        official page
+        official
       </v-btn>
     </v-card-actions>
   </v-card>
