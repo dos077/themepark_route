@@ -9,7 +9,12 @@
          It's impossible to see all of them in one visit on most days.
           Make the most out of yours.
       </p>
-      <p class="subtitle-1">last update {{ updated }}</p>
+      <p class="subtitle-1">
+        <a href="https://www.thrill-data.com" class="mr-2">
+          Data from thrill-data.com
+        </a>
+        last update {{ updated }}
+      </p>
       <v-divider class="my-2" />
       <div>
         <week-days />

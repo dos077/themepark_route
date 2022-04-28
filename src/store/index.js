@@ -44,7 +44,7 @@ const wizard = {
       state.breaksTarget = val;
     },
     setThreads(state, val) {
-      console.log('setting threads', val);
+      // console.log('setting threads', val);
       state.threads = val;
     },
   },
