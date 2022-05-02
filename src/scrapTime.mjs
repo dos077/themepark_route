@@ -96,26 +96,6 @@ const scrap = async (id) => {
   return data.waits ? data : null;
 };
 
-const saveSample = async () => {
-  const url = new URL(baseUrl);
-  url.searchParams.append('id', 138);
-  url.searchParams.append('boarding', 'False');
-  url.searchParams.append('dateStart', '2022-04-08');
-  url.searchParams.append('tag', 'min');
-  try {
-    const res = await fetch(url);
-    if (res.status !== 200) throw Error(res.status);
-    const json = await res.json();
-    if (!json.plot1) throw Error('plot1 not found');
-    const samplePath = './src/data/sampleRide.json';
-    fs.writeFileSync(samplePath, JSON.stringify(json.plot1));
-  } catch (e) {
-    console.log(e);
-  }
-};
-
-// saveSample();
-
 const saveWaits = (ride, data) => {
   const path = `./src/data/waits/${ride}.json`;
   fs.writeFileSync(path, JSON.stringify(data));

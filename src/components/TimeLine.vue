@@ -1,5 +1,9 @@
 <template>
-<v-card flatv-if="timeline">
+<v-card flat v-if="timeline">
+    <v-alert v-model="infoOn" dismissible type="warning"
+      color="red" outlined border="left" class="ma-4">
+      {{ alertTxt }}
+    </v-alert>
     <div class="overline ml-8 pt-2">
       {{ totalRides }} rides, {{ totalDistance }}
     </div>
@@ -46,10 +50,15 @@ const m2FtOrMi = (m) => (m < 304
   ? `${Math.round((m * 3.2808) / 50) * 50} ft`
   : `${Math.round(m * 0.00621371 * 2) / 20} mile`);
 
+const alertTxt = 'All time are estimated with trend adjusted wait times from past four weeks. Actual wait times will be different. Search for worst case if you want better chances of riding all the preplanned attractions.';
+
 export default {
   name: 'TimeLine',
   components: { RideCard },
-  data: () => ({ }),
+  data: () => ({
+    infoOn: true,
+    alertTxt,
+  }),
   computed: {
     ...mapState(['path', 'details', 'allExpand']),
     ...mapState('settings', ['dayOfWeek']),

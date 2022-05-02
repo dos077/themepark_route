@@ -34,5 +34,3 @@ const rides = [
 ];
 
 export default rides;
-
-// module.exports = rides;
