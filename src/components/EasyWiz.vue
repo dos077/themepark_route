@@ -16,13 +16,17 @@
         last update {{ updated }}
       </p>
       <v-divider class="my-2" />
-      <div>
-        <week-days />
-        <time-range />
-        <breaks-stops />
-        <walk-speed />
-        <rides-prf />
-      </div>
+      <v-row :no-gutters="isMobile">
+        <prf-day />
+        <prf-start />
+        <prf-end />
+        <prf-rides />
+        <prf-rating />
+        <prf-speed />
+        <prf-distance />
+        <prf-breaks />
+        <manual-rides-breaks />
+      </v-row>
       <v-divider class="mt-2" />
     </v-card-text>
     <v-card-actions>
@@ -43,11 +47,15 @@
 
 <script>
 import { mapState } from 'vuex';
-import WeekDays from './wizard/WeekDays.vue';
-import TimeRange from './wizard/TimeRange.vue';
-import WalkSpeed from './wizard/WalkSpeed.vue';
-import RidesPrf from './wizard/RidesPrf.vue';
-import BreaksStops from './wizard/BreaksStops.vue';
+import PrfBreaks from './wizard/PrfBreaks.vue';
+import PrfDay from './wizard/PrfDay.vue';
+import PrfDistance from './wizard/PrfDistance.vue';
+import PrfEnd from './wizard/PrfEnd.vue';
+import PrfRating from './wizard/PrfRating.vue';
+import PrfRides from './wizard/PrfRides.vue';
+import PrfSpeed from './wizard/PrfSpeed.vue';
+import PrfStart from './wizard/PrfStart.vue';
+import ManualRidesBreaks from './wizard/ManualRidesBreaks.vue';
 import waitsDb from '../data/waitTimes';
 
 const weekDays = 'su mo tu we th fr sa'.split(' ');
@@ -57,7 +65,15 @@ lastUpdate.setDate(lastUpdate.getDate() - 2);
 export default {
   name: 'EasyWiz',
   components: {
-    WeekDays, TimeRange, WalkSpeed, RidesPrf, BreaksStops,
+    PrfBreaks,
+    PrfDay,
+    PrfDistance,
+    PrfEnd,
+    PrfRating,
+    PrfRides,
+    PrfSpeed,
+    PrfStart,
+    ManualRidesBreaks,
   },
   data: () => ({
     step: 0,
@@ -104,6 +120,9 @@ export default {
         `Walk ${spdStr}, ${disStr}`,
         `Reviews scores - ${scoreStr}`,
       ];
+    },
+    isMobile() {
+      return this.$vuetify.breakpoint.xsOnly;
     },
   },
   methods: {

@@ -3,11 +3,11 @@
     <v-col :cols="isMobile ? 12 : 6">
       <span v-if="!isMobile" class="overline">Reviews</span>
       <v-slider :min="0" :max="2" :step="0.5" color="blue lighten-3"
-        :tick-labels="['no concern', '', '', '', 'very important']"
+        :tick-labels="['reviews -', '', '', '', '+ reviews']"
         :prepend-icon="isMobile ? 'mdi-star' : null"
         :value="scoreEm" @change="changeScoreEm" />
     </v-col>
-    <v-col :cols="isMobile ? 12 : 6">
+    <v-col v-if="false" :cols="isMobile ? 12 : 6">
       <span v-if="!isMobile" class="overline">types</span>
       <v-chip-group v-model="typeSelected" multiple mandatory column color="blue">
         <v-chip v-for="type in types" :key="type" :filter="!isMobile" outlined>

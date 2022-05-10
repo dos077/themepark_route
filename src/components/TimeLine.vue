@@ -50,7 +50,7 @@ const m2FtOrMi = (m) => (m < 304
   ? `${Math.round((m * 3.2808) / 50) * 50} ft`
   : `${Math.round(m * 0.00621371 * 2) / 20} mile`);
 
-const alertTxt = 'All time are estimated with trend adjusted wait times from past four weeks. Actual wait times will be different. Search for worst case if you want better chances of riding all the preplanned attractions.';
+const alertTxt = 'All wait times are estimated with trend adjusted averages from past four weeks. Actual wait times will be different. Search for worst case if you want better chances of riding all the preplanned attractions.';
 
 export default {
   name: 'TimeLine',

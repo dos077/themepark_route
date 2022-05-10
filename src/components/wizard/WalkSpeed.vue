@@ -10,7 +10,7 @@
     <v-col :cols="isMobile ? 12 : 6">
       <span v-if="!isMobile" class="overline">Distance</span>
       <v-slider :min="0" :max="2" :step="0.5" color="blue lighten-3"
-        :tick-labels="['less walk', '', '', '', 'more walk']"
+        :tick-labels="['walk -', '', '', '', '+ walk']"
         :prepend-icon="isMobile ? 'mdi-map-marker-distance' : null"
         :value="2 - disEm" @change="changeDisEm" />
     </v-col>

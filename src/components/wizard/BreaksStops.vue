@@ -3,7 +3,7 @@
     <v-col :cols="isMobile ? 12 : 6">
       <span v-if="!isMobile" class="overline">Rides</span>
       <v-slider :min="0" :max="2" :step="0.5" ticks="always" color="blue lighten-3"
-        :tick-labels="['Less', '', '', '', 'More']"
+        :tick-labels="['rides -', '', '', '', '+ rides']"
         :prepend-icon="isMobile ? 'mdi-map-marker-multiple' : null"
         :value="timeEm" @change="changeTimeEm" />
     </v-col>

@@ -115,7 +115,7 @@ const main = async () => {
     const { ride, id } = rides[i];
     const oldSave = loadWaits(ride);
     const now = new Date();
-    if (!oldSave || !oldSave.updated || now - new Date(oldSave.updated) > 432000000) {
+    if (!oldSave || !oldSave.updated || now - new Date(oldSave.updated) > 259200000) {
       console.log('scrapping new data', ride, id);
       const data = await scrap(id);
       if (data) saveWaits(ride, data);
@@ -126,5 +126,3 @@ const main = async () => {
 };
 
 main();
-
-// console.log(await scrap(137));
